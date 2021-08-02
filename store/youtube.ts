@@ -20,7 +20,7 @@ export const mutations: MutationTree<RootState> = {
 export const actions: ActionTree<RootState, RootState> = {
 
     async search({ commit, state }, { q }) {
-        const baseURL: string | undefined = "https://sns-service-321409.an.r.appspot.com/"
+        const baseURL: string | undefined = "https://sns-service-321409.an.r.appspot.com/" // "http://127.0.0.1:5000/"
         const headers = {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
