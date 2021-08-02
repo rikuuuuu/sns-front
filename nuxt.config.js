@@ -1,5 +1,9 @@
+require('dotenv').config()
+const { BASE_URL } = process.env
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  target: 'static',
   head: {
     title: 'sns-front',
     htmlAttrs: {
@@ -18,6 +22,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    'assets/css/style.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -35,9 +40,21 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/toast',
+    '@nuxtjs/dotenv',
   ],
+  toast: {
+    position: 'top-right',
+    duration: 2000
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+  generate: { 
+    dir: 'public' 
+  },
+  env: {
+    BASE_URL
   }
 }
